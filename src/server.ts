@@ -3,15 +3,18 @@ import path from 'path';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import apiRoutes from './routes/routes';
+import { ConectarBanco } from './instances/mysql';
 
 dotenv.config();
 
 const server = express();
 
 server.use(cors());
+ConectarBanco();
 
 server.use(express.static(path.join(__dirname, '../public')));
 
+dialect: 'mysql'
 // Definir o formato das requisições
 server.use(express.json()); // Usando JSON
 
