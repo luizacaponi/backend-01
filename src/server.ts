@@ -14,7 +14,7 @@ ConectarBanco();
 
 server.use(express.static(path.join(__dirname, '../public')));
 
-dialect: 'mysql'
+//dialect: 'mysql'
 // Definir o formato das requisições
 server.use(express.json()); // Usando JSON
 
